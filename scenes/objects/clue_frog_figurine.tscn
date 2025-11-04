@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://frog1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="FrogFigurine" instance=ExtResource("1_base")]
+object_id = "frog_figurine"
+object_name = "Frog Figurine"
+description = "A small ceramic frog sits on the mantelpiece. Behind it, tucked away, is a yellowed note.\n\nThe note reads: 'Jasper always loved his evening milk. Don't forget - fresh milk in a saucer by the kitchen door.'"
+object_type = 0
+sprite_color = Color(0.2, 0.6, 0.3, 1)
+clue_keywords = ["frog", "Jasper", "milk"]
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.2, 0.6, 0.3, 1)
+

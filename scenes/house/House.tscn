@@ -1,0 +1,204 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh8vxj3k2mw5r"]
+
+[ext_resource type="Script" path="res://scenes/house/house.gd" id="1_house"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
+size = Vector2(720, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bottom"]
+size = Vector2(720, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_left"]
+size = Vector2(10, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_right"]
+size = Vector2(10, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk"]
+size = Vector2(10, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb"]
+size = Vector2(10, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bab"]
+size = Vector2(10, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd"]
+size = Vector2(700, 10)
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_house")
+
+[node name="Floors" type="Node2D" parent="."]
+
+[node name="LivingRoom" type="ColorRect" parent="Floors"]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 500.0
+offset_bottom = 400.0
+color = Color(0.3, 0.25, 0.2, 1)
+
+[node name="Kitchen" type="ColorRect" parent="Floors"]
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 800.0
+offset_bottom = 400.0
+color = Color(0.35, 0.3, 0.25, 1)
+
+[node name="Bedroom" type="ColorRect" parent="Floors"]
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 400.0
+offset_bottom = 700.0
+color = Color(0.25, 0.2, 0.3, 1)
+
+[node name="Bathroom" type="ColorRect" parent="Floors"]
+offset_left = 400.0
+offset_top = 400.0
+offset_right = 600.0
+offset_bottom = 700.0
+color = Color(0.2, 0.3, 0.35, 1)
+
+[node name="Basement" type="ColorRect" parent="Floors"]
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 700.0
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="OuterWalls" type="StaticBody2D" parent="Walls"]
+collision_layer = 2
+collision_mask = 1
+
+[node name="TopWall" type="ColorRect" parent="Walls/OuterWalls"]
+offset_left = 90.0
+offset_top = 90.0
+offset_right = 810.0
+offset_bottom = 100.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OuterWalls/TopWall"]
+position = Vector2(360, 5)
+shape = SubResource("RectangleShape2D_top")
+
+[node name="BottomWall" type="ColorRect" parent="Walls/OuterWalls"]
+offset_left = 90.0
+offset_top = 700.0
+offset_right = 810.0
+offset_bottom = 710.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OuterWalls/BottomWall"]
+position = Vector2(360, 5)
+shape = SubResource("RectangleShape2D_bottom")
+
+[node name="LeftWall" type="ColorRect" parent="Walls/OuterWalls"]
+offset_left = 90.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 700.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OuterWalls/LeftWall"]
+position = Vector2(5, 300)
+shape = SubResource("RectangleShape2D_left")
+
+[node name="RightWall" type="ColorRect" parent="Walls/OuterWalls"]
+offset_left = 800.0
+offset_top = 100.0
+offset_right = 810.0
+offset_bottom = 700.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/OuterWalls/RightWall"]
+position = Vector2(5, 300)
+shape = SubResource("RectangleShape2D_right")
+
+[node name="InnerWalls" type="StaticBody2D" parent="Walls"]
+collision_layer = 2
+collision_mask = 1
+
+[node name="LivingKitchenWall" type="ColorRect" parent="Walls/InnerWalls"]
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 510.0
+offset_bottom = 350.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InnerWalls/LivingKitchenWall"]
+position = Vector2(5, 125)
+shape = SubResource("RectangleShape2D_lk")
+
+[node name="BedroomBathroomWall" type="ColorRect" parent="Walls/InnerWalls"]
+offset_left = 400.0
+offset_top = 400.0
+offset_right = 410.0
+offset_bottom = 650.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InnerWalls/BedroomBathroomWall"]
+position = Vector2(5, 125)
+shape = SubResource("RectangleShape2D_bb")
+
+[node name="BathroomBasementWall" type="ColorRect" parent="Walls/InnerWalls"]
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 610.0
+offset_bottom = 650.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InnerWalls/BathroomBasementWall"]
+position = Vector2(5, 125)
+shape = SubResource("RectangleShape2D_bab")
+
+[node name="HorizontalDivider" type="ColorRect" parent="Walls/InnerWalls"]
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 410.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InnerWalls/HorizontalDivider"]
+position = Vector2(350, 5)
+shape = SubResource("RectangleShape2D_hd")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="RoomLabels" type="Node2D" parent="."]
+
+[node name="LivingRoomLabel" type="Label" parent="RoomLabels"]
+offset_left = 250.0
+offset_top = 120.0
+offset_right = 350.0
+offset_bottom = 140.0
+text = "Living Room"
+
+[node name="KitchenLabel" type="Label" parent="RoomLabels"]
+offset_left = 620.0
+offset_top = 120.0
+offset_right = 680.0
+offset_bottom = 140.0
+text = "Kitchen"
+
+[node name="BedroomLabel" type="Label" parent="RoomLabels"]
+offset_left = 220.0
+offset_top = 420.0
+offset_right = 280.0
+offset_bottom = 440.0
+text = "Bedroom"
+
+[node name="BathroomLabel" type="Label" parent="RoomLabels"]
+offset_left = 470.0
+offset_top = 420.0
+offset_right = 540.0
+offset_bottom = 440.0
+text = "Bathroom"
+
+[node name="BasementLabel" type="Label" parent="RoomLabels"]
+offset_left = 670.0
+offset_top = 420.0
+offset_right = 730.0
+offset_bottom = 440.0
+text = "Basement"

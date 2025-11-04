@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://foodmilk1abc"]
+
+[ext_resource type="PackedScene" uid="uid://food1base" path="res://scenes/objects/FoodItem.tscn" id="1_base"]
+
+[node name="MilkSaucer" instance=ExtResource("1_base")]
+food_type = "milk"
+food_name = "Saucer of Milk"
+description = "A small saucer filled with fresh milk. Perfect for a cat."
+sprite_color = Color(1, 1, 1, 1)
+target_animal = "jasper"
+
+[node name="Sprite" parent="." index="0"]
+color = Color(1, 1, 1, 1)
+

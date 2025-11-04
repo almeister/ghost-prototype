@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://chester1abc"]
+
+[ext_resource type="PackedScene" uid="uid://animal1base" path="res://scenes/objects/Animal.tscn" id="1_base"]
+
+[node name="Chester" instance=ExtResource("1_base") groups=["animals"]]
+animal_id = "chester"
+animal_name = "Chester the Rabbit"
+description = "A fluffy white rabbit with a twitching pink nose. Chester hops around excitedly, already exploring his new home. He looks up at you with trusting eyes.\n\nYou feel a sense of peace wash over you."
+sprite_color = Color(0.9, 0.9, 0.9, 1)
+required_food = "parsley"
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.9, 0.9, 0.9, 1)
+

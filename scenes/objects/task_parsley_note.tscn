@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://parsley1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="ParsleyNote" instance=ExtResource("1_base")]
+object_id = "task_parsley"
+object_name = "Recipe Card"
+description = "An old recipe card for 'Herb Garden Salad'. In the margin, a handwritten note:\n\n'Chester always came running for fresh parsley. Leave some in the bathroom - he used to hide behind the tub when scared. The scent will bring him home.'\n\nA small rabbit paw print smudges the corner."
+object_type = 1
+sprite_color = Color(0.5, 0.8, 0.5, 1)
+task_id = "parsley_for_chester"
+task_description = "Place fresh parsley in the bathroom for Chester the rabbit."
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.5, 0.8, 0.5, 1)
+

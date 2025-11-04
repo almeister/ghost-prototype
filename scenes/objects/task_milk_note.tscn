@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://milk1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="MilkNote" instance=ExtResource("1_base")]
+object_id = "task_milk"
+object_name = "Reminder Note"
+description = "A note on the refrigerator reads:\n\n'REMINDER: Jasper needs his milk! Fresh milk in a saucer, left by the kitchen door every evening. He won't come otherwise.'\n\nA drawing of a happy cat is sketched in the corner."
+object_type = 1
+sprite_color = Color(0.9, 0.9, 0.7, 1)
+task_id = "milk_for_jasper"
+task_description = "Leave a saucer of milk by the kitchen door for Jasper the cat."
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.9, 0.9, 0.7, 1)
+

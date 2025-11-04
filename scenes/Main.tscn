@@ -1,0 +1,114 @@
+[gd_scene load_steps=25 format=3 uid="uid://main1scene"]
+
+[ext_resource type="PackedScene" uid="uid://bh8vxj3k2mw5r" path="res://scenes/house/House.tscn" id="1_house"]
+[ext_resource type="PackedScene" uid="uid://c5qvr8yjk3yxu" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://b5mw8xk3pyr2d" path="res://scenes/ui/ObjectViewer.tscn" id="3_viewer"]
+[ext_resource type="PackedScene" uid="uid://cxk3pyr2d5mw8" path="res://scenes/ui/Logbook.tscn" id="4_logbook"]
+[ext_resource type="PackedScene" uid="uid://d5mw8xk3pyr2c" path="res://scenes/ui/GhostMessage.tscn" id="5_ghost"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="6_main"]
+
+[ext_resource type="PackedScene" uid="uid://book1abc" path="res://scenes/objects/clue_book.tscn" id="10_book"]
+[ext_resource type="PackedScene" uid="uid://frog1abc" path="res://scenes/objects/clue_frog_figurine.tscn" id="11_frog"]
+[ext_resource type="PackedScene" uid="uid://milk1abc" path="res://scenes/objects/task_milk_note.tscn" id="12_milk"]
+[ext_resource type="PackedScene" uid="uid://mug1abc" path="res://scenes/objects/clue_coffee_mug.tscn" id="13_mug"]
+[ext_resource type="PackedScene" uid="uid://feeder1abc" path="res://scenes/objects/clue_bird_feeder.tscn" id="14_feeder"]
+[ext_resource type="PackedScene" uid="uid://seeds1abc" path="res://scenes/objects/task_seeds_note.tscn" id="15_seeds"]
+[ext_resource type="PackedScene" uid="uid://drawing1abc" path="res://scenes/objects/clue_child_drawing.tscn" id="16_drawing"]
+[ext_resource type="PackedScene" uid="uid://photo1abc" path="res://scenes/objects/clue_garden_photo.tscn" id="17_photo"]
+[ext_resource type="PackedScene" uid="uid://parsley1abc" path="res://scenes/objects/task_parsley_note.tscn" id="18_parsley"]
+
+[ext_resource type="PackedScene" uid="uid://bill1abc" path="res://scenes/objects/red_herring_bill.tscn" id="20_bill"]
+[ext_resource type="PackedScene" uid="uid://diary1abc" path="res://scenes/objects/red_herring_diary.tscn" id="21_diary"]
+[ext_resource type="PackedScene" uid="uid://pizza1abc" path="res://scenes/objects/red_herring_pizza.tscn" id="22_pizza"]
+[ext_resource type="PackedScene" uid="uid://familyphoto1abc" path="res://scenes/objects/red_herring_family_photo.tscn" id="23_family"]
+
+[ext_resource type="PackedScene" uid="uid://jasper1abc" path="res://scenes/objects/animal_jasper.tscn" id="30_jasper"]
+[ext_resource type="PackedScene" uid="uid://mary1abc" path="res://scenes/objects/animal_mary.tscn" id="31_mary"]
+[ext_resource type="PackedScene" uid="uid://chester1abc" path="res://scenes/objects/animal_chester.tscn" id="32_chester"]
+
+[ext_resource type="PackedScene" uid="uid://foodmilk1abc" path="res://scenes/objects/food_milk.tscn" id="40_milk_food"]
+[ext_resource type="PackedScene" uid="uid://foodseeds1abc" path="res://scenes/objects/food_seeds.tscn" id="41_seeds_food"]
+[ext_resource type="PackedScene" uid="uid://foodparsley1abc" path="res://scenes/objects/food_parsley.tscn" id="42_parsley_food"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("6_main")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="House" parent="." instance=ExtResource("1_house")]
+
+[node name="Player" parent="." instance=ExtResource("2_player") groups=["player"]]
+position = Vector2(300, 250)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="ClueBook" parent="Objects" instance=ExtResource("10_book")]
+position = Vector2(250, 200)
+
+[node name="FrogFigurine" parent="Objects" instance=ExtResource("11_frog")]
+position = Vector2(350, 180)
+
+[node name="MilkNote" parent="Objects" instance=ExtResource("12_milk")]
+position = Vector2(650, 200)
+
+[node name="CoffeeMug" parent="Objects" instance=ExtResource("13_mug")]
+position = Vector2(700, 250)
+
+[node name="BirdFeeder" parent="Objects" instance=ExtResource("14_feeder")]
+position = Vector2(700, 600)
+
+[node name="SeedsNote" parent="Objects" instance=ExtResource("15_seeds")]
+position = Vector2(750, 550)
+
+[node name="ChildDrawing" parent="Objects" instance=ExtResource("16_drawing")]
+position = Vector2(200, 500)
+
+[node name="GardenPhoto" parent="Objects" instance=ExtResource("17_photo")]
+position = Vector2(300, 600)
+
+[node name="ParsleyNote" parent="Objects" instance=ExtResource("18_parsley")]
+position = Vector2(550, 600)
+
+[node name="OldBill" parent="Objects" instance=ExtResource("20_bill")]
+position = Vector2(150, 300)
+
+[node name="CreepyDiary" parent="Objects" instance=ExtResource("21_diary")]
+position = Vector2(350, 500)
+
+[node name="PizzaMenu" parent="Objects" instance=ExtResource("22_pizza")]
+position = Vector2(600, 350)
+
+[node name="FamilyPhoto" parent="Objects" instance=ExtResource("23_family")]
+position = Vector2(450, 200)
+
+[node name="FoodItems" type="Node2D" parent="."]
+
+[node name="MilkSaucer" parent="FoodItems" instance=ExtResource("40_milk_food")]
+position = Vector2(750, 300)
+
+[node name="SunflowerSeeds" parent="FoodItems" instance=ExtResource("41_seeds_food")]
+position = Vector2(350, 450)
+
+[node name="FreshParsley" parent="FoodItems" instance=ExtResource("42_parsley_food")]
+position = Vector2(500, 650)
+
+[node name="Animals" type="Node2D" parent="."]
+
+[node name="Jasper" parent="Animals" instance=ExtResource("30_jasper")]
+position = Vector2(680, 320)
+
+[node name="Mary" parent="Animals" instance=ExtResource("31_mary")]
+position = Vector2(380, 420)
+
+[node name="Chester" parent="Animals" instance=ExtResource("32_chester")]
+position = Vector2(520, 620)
+
+[node name="UI" type="Node" parent="."]
+
+[node name="ObjectViewer" parent="UI" instance=ExtResource("3_viewer")]
+
+[node name="Logbook" parent="UI" instance=ExtResource("4_logbook")]
+
+[node name="GhostMessage" parent="UI" instance=ExtResource("5_ghost")]
+

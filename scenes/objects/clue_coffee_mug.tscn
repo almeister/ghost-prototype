@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://mug1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="CoffeeMug" instance=ExtResource("1_base")]
+object_id = "coffee_mug"
+object_name = "Coffee Mug"
+description = "A chipped coffee mug sits on the counter. On its side is a faded drawing of a bird and the name 'Mary' written in delicate script.\n\nThe bird in the drawing looks like it's singing."
+object_type = 0
+sprite_color = Color(0.7, 0.5, 0.3, 1)
+clue_keywords = ["Mary", "bird"]
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.7, 0.5, 0.3, 1)
+

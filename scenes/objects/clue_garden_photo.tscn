@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://photo1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="GardenPhoto" instance=ExtResource("1_base")]
+object_id = "garden_photo"
+object_name = "Garden Photograph"
+description = "A faded photograph shows a lush garden. In the corner, a rabbit nibbles on fresh parsley.\n\nOn the back, someone wrote: 'Chester's favorite spot - the herb patch. Parsley was always his weakness.'"
+object_type = 0
+sprite_color = Color(0.7, 0.7, 0.6, 1)
+clue_keywords = ["Chester", "parsley", "rabbit"]
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.7, 0.7, 0.6, 1)
+

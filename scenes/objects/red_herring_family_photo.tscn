@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://familyphoto1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="FamilyPhoto" instance=ExtResource("1_base")]
+object_id = "red_herring_family"
+object_name = "Family Photograph"
+description = "A faded photograph of a family reunion. About twenty people smile at the camera, gathered around a picnic table.\n\nWritten on the back: 'Summer 1985 - The last good reunion before Uncle Bob's infamous potato salad incident. We don't talk about it.'\n\nYou'll never know what happened with that potato salad."
+object_type = 2
+sprite_color = Color(0.8, 0.8, 0.7, 1)
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.8, 0.8, 0.7, 1)
+

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://diary1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="CreepyDiary" instance=ExtResource("1_base")]
+object_id = "red_herring_diary"
+object_name = "Mysterious Diary"
+description = "A leather-bound diary with a single entry:\n\n'October 31st - I swear I saw something move in the mirror. When I turned around, nothing was there. But I felt... watched. The animals have been acting strange too.'\n\nThe rest of the pages are blank. Spooky!"
+object_type = 2
+sprite_color = Color(0.3, 0.2, 0.2, 1)
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.3, 0.2, 0.2, 1)
+

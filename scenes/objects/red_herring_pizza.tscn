@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://pizza1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="PizzaMenu" instance=ExtResource("1_base")]
+object_id = "red_herring_pizza"
+object_name = "Pizza Menu"
+description = "A takeout menu for 'Ghostly Good Pizza'.\n\nSpecials of the day:\n- The Phantom Pepperoni\n- Spectral Supreme\n- Boo-ccoli and Cheese\n\nSomeone has circled 'Spectral Supreme' with a note: 'TOO SPICY!!!'\n\nAt least the previous owner had a sense of humor about their situation."
+object_type = 2
+sprite_color = Color(0.9, 0.3, 0.2, 1)
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.9, 0.3, 0.2, 1)
+

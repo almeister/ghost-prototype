@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://drawing1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="ChildDrawing" instance=ExtResource("1_base")]
+object_id = "child_drawing"
+object_name = "Child's Drawing"
+description = "A child's crayon drawing hangs on the bedroom wall. It shows a fluffy rabbit in a garden, surrounded by herbs and vegetables.\n\nScrawled in messy handwriting: 'Chester likes to hide! Look for him where it smells fresh and green!'"
+object_type = 0
+sprite_color = Color(0.9, 0.7, 0.9, 1)
+clue_keywords = ["Chester", "rabbit", "herbs"]
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.9, 0.7, 0.9, 1)
+

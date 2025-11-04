@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://feeder1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="BirdFeeder" instance=ExtResource("1_base")]
+object_id = "bird_feeder"
+object_name = "Bird Feeder"
+description = "An old bird feeder hangs in the basement corner, gathering dust. A small tag attached reads:\n\n'Mary's favorite: Sunflower seeds. Place near the bedroom window where she can see the trees.'\n\nThe tag is written in the same handwriting as the coffee mug."
+object_type = 0
+sprite_color = Color(0.8, 0.6, 0.4, 1)
+clue_keywords = ["Mary", "sunflower", "seeds"]
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.8, 0.6, 0.4, 1)
+

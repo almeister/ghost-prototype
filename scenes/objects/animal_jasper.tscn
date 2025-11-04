@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jasper1abc"]
+
+[ext_resource type="PackedScene" uid="uid://animal1base" path="res://scenes/objects/Animal.tscn" id="1_base"]
+
+[node name="Jasper" instance=ExtResource("1_base") groups=["animals"]]
+animal_id = "jasper"
+animal_name = "Jasper the Cat"
+description = "A sleek black cat with bright green eyes. Jasper purrs contentedly, happy to have found a new home. He rubs against your leg affectionately.\n\nThe ghost's presence seems lighter now."
+sprite_color = Color(0.2, 0.2, 0.2, 1)
+required_food = "milk"
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.2, 0.2, 0.2, 1)
+

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bill1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="OldBill" instance=ExtResource("1_base")]
+object_id = "red_herring_bill"
+object_name = "Electricity Bill"
+description = "An old electricity bill from three years ago. The amount due is circled in red ink multiple times.\n\n'$847.23 - FINAL NOTICE!'\n\nWell, that won't be getting paid now..."
+object_type = 2
+sprite_color = Color(0.9, 0.8, 0.7, 1)
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.9, 0.8, 0.7, 1)
+

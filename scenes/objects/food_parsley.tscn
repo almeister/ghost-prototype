@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf0nx8osw1m5y"]
+
+[ext_resource type="PackedScene" uid="uid://food1base" path="res://scenes/objects/FoodItem.tscn" id="1_base"]
+
+[node name="FreshParsley" instance=ExtResource("1_base")]
+food_type = "parsley"
+food_name = "Fresh Parsley"
+description = "A bunch of fresh, fragrant parsley. Perfect for a rabbit."
+sprite_color = Color(0.3, 0.7, 0.3, 1)
+target_animal = "chester"
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.3, 0.7, 0.3, 1)
+

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://seeds1abc"]
+
+[ext_resource type="PackedScene" uid="uid://dq3v4w8xk1pyr" path="res://scenes/objects/InteractableObject.tscn" id="1_base"]
+
+[node name="SeedsNote" instance=ExtResource("1_base")]
+object_id = "task_seeds"
+object_name = "Bird Care Instructions"
+description = "A weathered card with instructions:\n\n'BIRD CARE: Mary loves sunflower seeds. Place a small dish near the bedroom window. She'll come when she hears the familiar sound of seeds falling into her dish.'\n\nA small feather is pressed between the card's pages."
+object_type = 1
+sprite_color = Color(0.6, 0.8, 0.9, 1)
+task_id = "seeds_for_mary"
+task_description = "Place sunflower seeds near the bedroom window for Mary the bird."
+
+[node name="Sprite" parent="." index="0"]
+color = Color(0.6, 0.8, 0.9, 1)
+
