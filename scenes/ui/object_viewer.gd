@@ -30,11 +30,11 @@ func find_player():
 	"""Find the player in the scene"""
 	player = get_tree().get_first_node_in_group("player")
 
-func _input(event):
-	if visible:
-		# Allow closing with interact button or escape
-		if InputManager.is_interact_just_pressed() or Input.is_action_just_pressed("ui_cancel"):
-			close_viewer()
+func _unhandled_input(event):
+	# Close with dedicated back button (Backspace/B) or Escape
+	if visible and (event.is_action_released("ui_back") or event.is_action_released("ui_cancel")):
+		close_viewer()
+		get_viewport().set_input_as_handled()
 
 func show_object(obj: InteractableObject):
 	"""Display an object in the viewer"""

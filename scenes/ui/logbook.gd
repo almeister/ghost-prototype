@@ -35,11 +35,15 @@ func find_player():
 	"""Find the player in the scene"""
 	player = get_tree().get_first_node_in_group("player")
 
-func _input(event):
-	if InputManager.is_logbook_just_pressed():
+func _unhandled_input(event):
+	# Toggle with Tab/Select button
+	if event.is_action_released("toggle_logbook"):
 		toggle_logbook()
-	elif is_open and Input.is_action_just_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+	# Close with Backspace/B or Escape when open
+	elif is_open and (event.is_action_released("ui_back") or event.is_action_released("ui_cancel")):
 		close_logbook()
+		get_viewport().set_input_as_handled()
 
 func toggle_logbook():
 	"""Toggle the logbook open/closed"""

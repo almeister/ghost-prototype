@@ -23,8 +23,7 @@ func _ready():
 func _physics_process(delta: float):
 	if can_move:
 		handle_movement(delta)
-	
-	handle_interaction()
+		handle_interaction()
 
 func handle_movement(delta: float):
 	# Get movement input from InputManager
@@ -76,18 +75,18 @@ func _on_interactable_exited(body: Node2D):
 			body.highlight(false)
 
 func _on_interactable_area_entered(area: Area2D):
-	var parent = area.get_parent()
-	if parent and parent.has_method("interact") and parent not in nearby_interactables:
-		nearby_interactables.append(parent)
-		if parent.has_method("highlight"):
-			parent.highlight(true)
+	# The area itself is the InteractableObject (extends Area2D)
+	if area.has_method("interact") and area not in nearby_interactables:
+		nearby_interactables.append(area)
+		if area.has_method("highlight"):
+			area.highlight(true)
 
 func _on_interactable_area_exited(area: Area2D):
-	var parent = area.get_parent()
-	if parent and parent in nearby_interactables:
-		nearby_interactables.erase(parent)
-		if parent.has_method("highlight"):
-			parent.highlight(false)
+	# The area itself is the InteractableObject (extends Area2D)
+	if area in nearby_interactables:
+		nearby_interactables.erase(area)
+		if area.has_method("highlight"):
+			area.highlight(false)
 
 func set_can_move(value: bool):
 	"""Enable or disable player movement (useful when viewing objects)"""
