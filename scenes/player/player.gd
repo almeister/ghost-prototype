@@ -6,9 +6,10 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @export var interaction_range: float = 80.0
 
-@onready var sprite: ColorRect = $Sprite
 @onready var flashlight: PointLight2D = $Flashlight
 @onready var interaction_area: Area2D = $InteractionArea
+
+@onready var _animated_sprite = $AnimatedSprite2D
 
 var nearby_interactables: Array[Node] = []
 var can_move: bool = true
@@ -33,10 +34,23 @@ func handle_movement(delta: float):
 		# Move the player
 		velocity = input_vector * speed
 		
-		# Rotate sprite to face movement direction
-		rotation = input_vector.angle()
+		# Play appropriate animation based on movement direction
+		# Prioritize horizontal or vertical based on which component is larger
+		if abs(input_vector.x) > abs(input_vector.y):
+			# Moving more horizontally
+			if input_vector.x > 0:
+				_animated_sprite.play("walk-right")
+			else:
+				_animated_sprite.play("walk-left")
+		else:
+			# Moving more vertically
+			if input_vector.y > 0:
+				_animated_sprite.play("walk-down")
+			else:
+				_animated_sprite.play("walk-up")
 	else:
 		velocity = Vector2.ZERO
+		_animated_sprite.stop()
 	
 	move_and_slide()
 

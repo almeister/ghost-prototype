@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://main1scene"]
+[gd_scene load_steps=40 format=3 uid="uid://main1scene"]
 
 [ext_resource type="PackedScene" uid="uid://bh8vxj3k2mw5r" path="res://scenes/house/House.tscn" id="1_house"]
 [ext_resource type="PackedScene" uid="uid://c5qvr8yjk3yxu" path="res://scenes/player/Player.tscn" id="2_player"]
 [ext_resource type="PackedScene" uid="uid://b5mw8xk3pyr2d" path="res://scenes/ui/ObjectViewer.tscn" id="3_viewer"]
+[ext_resource type="Texture2D" uid="uid://dnrhao1c7jmp5" path="res://assets/sprites/characters/free_character_1-3.png" id="4_36rkl"]
 [ext_resource type="PackedScene" uid="uid://cxk3pyr2d5mw8" path="res://scenes/ui/Logbook.tscn" id="4_logbook"]
 [ext_resource type="PackedScene" uid="uid://72nvnt5rwbk" path="res://scenes/ui/GhostMessage.tscn" id="5_ghost"]
 [ext_resource type="Script" uid="uid://b7ksphrxomgmc" path="res://scenes/main.gd" id="6_main"]
@@ -26,6 +27,113 @@
 [ext_resource type="PackedScene" uid="uid://btah7cg38tejk" path="res://scenes/objects/food_seeds.tscn" id="41_seeds_food"]
 [ext_resource type="PackedScene" uid="uid://bf0nx8osw1m5y" path="res://scenes/objects/food_parsley.tscn" id="42_parsley_food"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs0b5"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma7h6"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2s0e"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsxep"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(0, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0vrg"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(16, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg70y"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(32, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnhog"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(0, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c4at"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(16, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6wdg"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(32, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq6as"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(0, 60, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxyth"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(16, 60, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cobve"]
+atlas = ExtResource("4_36rkl")
+region = Rect2(32, 60, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmqll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs0b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma7h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2s0e")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsxep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0vrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg70y")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnhog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c4at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6wdg")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq6as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxyth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cobve")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 5.0
+}]
+
 [node name="Main" type="Node2D"]
 script = ExtResource("6_main")
 
@@ -36,6 +144,12 @@ color = Color(0.1, 0.1, 0.15, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_player")]
 position = Vector2(300, 250)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_cmqll")
+animation = &"walk-right"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
 
 [node name="Objects" type="Node2D" parent="."]
 
